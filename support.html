@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Destek • Dietitian AI</title>
+  <meta name="description" content="Dietitian AI destek sayfası. SSS, iletişim ve geri bildirim kanalları." />
+  <meta name="theme-color" content="#23c1b5" />
+
+  <!-- Open Graph (isteğe bağlı ama faydalı) -->
+  <meta property="og:title" content="Dietitian AI • Destek" />
+  <meta property="og:description" content="Sorularınız mı var? Buradan bize ulaşın." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg-1:#10cfc9;
+      --bg-2:#0aa3b3;
+      --card-bg:rgba(255,255,255,.12);
+      --text:#0e2a2a;
+      --white:#ffffff;
+      --accent:#0fd5c9;
+      --accent-2:#0aa3b3;
+      --shadow:0 10px 30px rgba(0,0,0,.15);
+      --radius:18px;
+      --glass-border:1px solid rgba(255,255,255,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--white);
+      background:linear-gradient(145deg,var(--bg-1),var(--bg-2)) fixed;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      padding:28px 20px 80px;
+    }
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;
+    }
+    .logo{
+      width:36px;height:36px;border-radius:10px;
+      background:conic-gradient(from 180deg at 50% 50%, #ff5f6d, #ffc371);
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:32px;margin:0}
+    .muted{opacity:.85}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+    }
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      background:var(--card-bg);
+      border:var(--glass-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 10px;font-size:22px}
+    .card p{margin:8px 0}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--white);color:#064a49;
+      border:none;border-radius:12px;padding:12px 16px;
+      font-weight:600;text-decoration:none;
+      box-shadow:0 8px 18px rgba(0,0,0,.15);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.18)}
+    .btn.ghost{
+      background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);
+      box-shadow:none;
+    }
+    .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;border-radius:999px;
+      background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+      font-size:12px
+    }
+
+    /* Accordion */
+    .faq-item{border-top:1px solid rgba(255,255,255,.25)}
+    .faq-item:first-child{border-top:none}
+    .faq-q{
+      width:100%;text-align:left;background:transparent;color:#fff;border:none;
+      padding:16px 0;font-weight:600;display:flex;justify-content:space-between;
+      align-items:center;gap:10px;cursor:pointer;
+    }
+    .faq-q svg{transition:transform .2s ease}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-item.open .faq-q svg{transform:rotate(180deg)}
+
+    footer{
+      text-align:center;opacity:.85;margin-top:28px;
+      font-size:13px;
+    }
+    a{color:#e7f9ff}
+    .mini{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px
+    }
+    @media (max-width:520px){ .mini{grid-template-columns:1fr} }
+    .mini .card{padding:16px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="pill">Dietitian AI</div>
+          <h1>Destek</h1>
+        </div>
+      </a>
+      <nav class="btn-row">
+        <a class="btn ghost" href="#faq" aria-label="SSS">SSS</a>
+        <a class="btn ghost" href="#contact" aria-label="İletişim">İletişim</a>
+      </nav>
+    </header>
+
+    <section class="grid">
+      <!-- Sol: İletişim & İşleyiş -->
+      <div class="card">
+        <h2>Nasıl yardım alabilirim?</h2>
+        <p class="muted">
+          En hızlı yanıt için e-posta üzerinden bize ulaşın. Çoğu isteği <strong>24 saat</strong> içinde yanıtlıyoruz
+          (resmî tatiller hariç).
+        </p>
+
+        <div class="btn-row">
+          <a class="btn" href="mailto:info@paylisher.com?subject=Dietitian%20AI%20Destek&body=Lütfen%20sorununuzu%20kısaca%20açıklayın.%0A%0ACihaz%20Modeli%3A%0AiOS%20Sürümü%3A%0AUygulama%20Sürümü%3A%0A"
+             aria-label="E-posta ile destek">
+            <!-- Mail icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6h16a2 2 0 0 1 2 2v.5l-10 6-10-6V8a2 2 0 0 1 2-2Z" fill="#0aa3b3"/>
+              <path d="M22 10.5V16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5.5l10 6 10-6Z" fill="#0fd5c9"/>
+            </svg>
+            E-posta Gönder
+          </a>
+          <a class="btn ghost" href="https://github.com/softmarketsolution" target="_blank" rel="noopener">
+            Hata / Geri Bildirim
+          </a>
+        </div>
+
+        <div class="mini">
+          <div class="card">
+            <strong>Çalışma Saatleri</strong>
+            <p class="muted" style="margin-top:6px">
+              Hafta içi 09:00–18:00 (TR). Mesai dışı gelen iletiler ilk iş gününde yanıtlanır.
+            </p>
+          </div>
+          <div class="card">
+            <strong>Yanıt Süresi</strong>
+            <p class="muted" style="margin-top:6px">
+              Ortalama <strong>24 saat</strong>. Kritik erişim sorunları önceliklidir.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sağ: Hızlı Linkler -->
+      <aside class="card">
+        <h2>Hızlı Bağlantılar</h2>
+        <p class="muted">Yasal belgeler ve hesap işlemleri için:</p>
+        <div class="btn-row" style="margin-top:8px">
+          <a class="btn ghost" href="dietitian-ai-privacy-policy.html">Gizlilik Politikası</a>
+          <a class="btn ghost" href="dietitian-ai-terms-of-use.html">Kullanım Koşulları</a>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <strong>Satın Alma / Abonelik</strong>
+          <p class="muted" style="margin-top:6px">
+            Abonelik sorunları (yenileme, iade talepleri) için lütfen Apple hesabınızın
+            <em>Ayarlar &gt; Apple Kimliği &gt; Abonelikler</em> menüsünü kontrol edin.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SSS -->
+    <section id="faq" class="card" style="margin-top:20px">
+      <h2>Sıkça Sorulan Sorular</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Aboneliğim aktif değil görünüyor, ne yapmalıyım?
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 15.5 5 8.5h14z"/></svg>
+        </button>
+        <div class="faq-a">
+          <p class="muted">
+            Uygulama içinden <strong>Restore Purchases / Satın Almaları Geri Yükle</strong> seçeneğini deneyin.
+            Hâlâ çözülmezse bize yazın; işlem kimliği (App Store makbuz/SS) yardımcı olur.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Verilerim nerede saklanıyor?
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 15.5 5 8.5h14z"/></svg>
+        </button>
+        <div class="faq-a">
+          <p class="muted">
+            Temel kullanıcı verileri cihazınızda (ör. CoreData / UserDefaults) tutulur. Bulut veya üçüncü şahıslarla
+            toplu paylaşım yapılmaz. Ayrıntılar için gizlilik politikamıza bakın.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Tıbbi tavsiye veriyor musunuz?
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 15.5 5 8.5h14z"/></svg>
+        </button>
+        <div class="faq-a">
+          <p class="muted">
+            Uygulama beslenme konusunda bilgilendirme sağlar; profesyonel tıbbi tavsiye yerine geçmez.
+            Sağlık sorununuz varsa bir uzmana danışın.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- İletişim -->
+    <section id="contact" class="card" style="margin-top:20px">
+      <h2>İletişim</h2>
+      <p class="muted">
+        Bize <a href="mailto:info@paylisher.com">info@paylisher.com</a> adresinden ulaşabilirsiniz.
+        E-postanıza cihaz modeli, iOS sürümü ve hata adımlarını eklerseniz çok daha hızlı yardımcı oluruz.
+      </p>
+      <p class="muted">
+        <strong>Paylisher Teknoloji A.Ş.</strong>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Paylisher Teknoloji A.Ş. • <a href="dietitian-ai-privacy-policy.html">Gizlilik</a> • <a href="dietitian-ai-terms-of-use.html">Koşullar</a>
+    </footer>
+  </div>
+
+  <script>
+    // Yılı otomatik yaz
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Basit akordeon
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const btn=item.querySelector('.faq-q');
+      btn.addEventListener('click',()=>{
+        const open=item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true':'false');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kullanım Koşulları | Dietitian AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root{
+      --bg1:#21d4fd; --bg2:#1bcab2;
+      --glass:rgba(255,255,255,.14);
+      --stroke:rgba(255,255,255,.25);
+      --shadow:0 10px 30px rgba(0,0,0,.15);
+      --fg:#0f172a; --muted:#334155; --brand:#0ea5a4; --link:#0ea5a4;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{ --glass:rgba(255,255,255,.10); --stroke:rgba(255,255,255,.18);
+             --shadow:0 10px 30px rgba(0,0,0,.35); --fg:#e5f3ff; --muted:#cbd5e1; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--fg);
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(255,255,255,.25), transparent 60%),
+        linear-gradient(160deg,var(--bg1),var(--bg2));
+    }
+    .wrap{max-width:900px;margin:0 auto;padding:40px 20px}
+    .card{
+      backdrop-filter:saturate(140%) blur(14px);
+      -webkit-backdrop-filter:saturate(140%) blur(14px);
+      background:var(--glass);
+      border:1px solid var(--stroke);
+      border-radius:22px; box-shadow:var(--shadow); padding:28px;
+    }
+    header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+    .logo{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;
+      background:rgba(255,255,255,.22);border:1px solid var(--stroke);font-weight:800;color:#fff}
+    h1{margin:0;font-size:28px}
+    .subtitle{color:var(--muted);font-size:14px}
+    .pill{margin-left:auto;display:inline-block;font-size:12px;color:var(--muted);
+      border:1px solid var(--stroke);border-radius:999px;padding:6px 10px}
+    section{margin:18px 0 10px}
+    h2{font-size:18px;margin:10px 0 6px}
+    p{margin:8px 0 12px;font-size:16px}
+    ul{margin:6px 0 14px 22px}
+    .block{background:rgba(255,255,255,.12);border:1px solid var(--stroke);
+      border-radius:16px;padding:16px 18px}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .footer{margin-top:18px;font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">AI</div>
+        <div>
+          <h1>Kullanım Koşulları</h1>
+          <div class="subtitle">Dietitian AI • Son güncelleme:
+            <time datetime="2025-08-19">19 Ağustos 2025</time></div>
+        </div>
+        <span class="pill">Sürüm 1.0</span>
+      </header>
+
+      <section class="block">
+        <p>Bu uygulamayı kullanarak aşağıdaki şartları kabul etmiş olursunuz.</p>
+      </section>
+
+      <section class="block">
+        <h2>Hizmet Amacı</h2>
+        <p>Uygulamanın amacı sağlıklı beslenme önerileri sunmaktır; profesyonel
+           tıbbi tavsiye yerine geçmez.</p>
+      </section>
+
+      <section class="block">
+        <h2>Kullanıcı Sorumluluğu</h2>
+        <p>Kullanıcılar verdikleri bilgilerin doğruluğundan sorumludur.</p>
+      </section>
+
+      <section class="block">
+        <h2>Sağlık Uyarısı</h2>
+        <p>Herhangi bir sağlık sorununuz varsa bir uzmana danışmanız önerilir.</p>
+      </section>
+
+      <section class="block">
+        <h2>KVKK</h2>
+        <p>Verileriniz KVKK kapsamında korunur ve gizlilik politikamızda
+           açıklandığı şekilde işlenir. Gizlilik politikası:
+           <a href="/dietitian-ai-privacy-policy.html">Gizlilik Politikası</a></p>
+      </section>
+
+      <section class="block">
+        <h2>İletişim</h2>
+        <p>Her türlü soru için: <a href="mailto:info@paylisher.com">info@paylisher.com</a></p>
+      </section>
+
+      <div class="footer">© <span id="yil"></span> Paylisher Teknoloji A.Ş.</div>
+    </div>
+  </div>
+
+  <script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+</body>
+</html>
